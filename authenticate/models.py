@@ -55,10 +55,17 @@ class User(AbstractUser):
         ('A', u'Aluno'),
     )
 
+    GENERO_CHOICES = (
+        ('M', u'Masculino'),
+        ('F', u'Feminino'),
+        ('O', u'Outro'),
+    )
+
     username = None
     email = models.EmailField(_('email address'), unique=True)
     phone = models.CharField(max_length=15, null=True, blank=True)
     categoria = models.CharField(max_length=1, blank=True, null=True, choices=CATEGORIA_CHOICES, verbose_name='Categoria do usuario')
+    genero = models.CharField(max_length=1, blank=True, null=True, choices=GENERO_CHOICES, verbose_name='Gênero usuario')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []

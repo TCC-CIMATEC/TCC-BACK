@@ -42,6 +42,8 @@ INSTALLED_APPS = [
 
     'authenticate',
     'jogador',
+    'questao',
+    'turma',
 ]
 
 MIDDLEWARE = [
