@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Jogador, FaseLogicaProgramacao, JogadorTurmaFaseLogicaProgramacao
+from .models import Jogador, FaseLogicaProgramacao, JogadorTurmaFaseLogicaProgramacao, FasePensamentoComputacional, JogadorTurmaFasePensamentoComputacional
 
 class JogadorAdmin(admin.ModelAdmin):
   list_display = ('user',
@@ -11,8 +11,18 @@ class FaseLogicaProgramacaoAdmin(admin.ModelAdmin):
                   'pontos',
                   'questao',)
 
+class FasePensamentoComputacional(admin.ModelAdmin):
+  list_display = ('categoria',
+                  'pontos',
+                  'questao',)
+
 
 class JogadorTurmaFaseLogicaProgramacaoAdmin(admin.ModelAdmin):
+  list_display = ('jogador',
+                  'fase',)
+
+
+class JogadorTurmaFasePensamentoComputacional(admin.ModelAdmin):
   list_display = ('jogador',
                   'fase',)
 
@@ -20,3 +30,5 @@ class JogadorTurmaFaseLogicaProgramacaoAdmin(admin.ModelAdmin):
 admin.site.register(Jogador, JogadorAdmin)
 admin.site.register(FaseLogicaProgramacao, FaseLogicaProgramacaoAdmin)
 admin.site.register(JogadorTurmaFaseLogicaProgramacao, JogadorTurmaFaseLogicaProgramacaoAdmin)
+admin.site.register(FasePensamentoComputacional, FasePensamentoComputacional)
+admin.site.register(JogadorTurmaFasePensamentoComputacional, JogadorTurmaFasePensamentoComputacional)
