@@ -11,7 +11,7 @@ class FaseLogicaProgramacaoAdmin(admin.ModelAdmin):
                   'pontos',
                   'questao',)
 
-class FasePensamentoComputacional(admin.ModelAdmin):
+class FasePensamentoComputacionalAdmin(admin.ModelAdmin):
   list_display = ('categoria',
                   'pontos',
                   'questao',)
@@ -22,7 +22,7 @@ class JogadorTurmaFaseLogicaProgramacaoAdmin(admin.ModelAdmin):
                   'fase',)
 
 
-class JogadorTurmaFasePensamentoComputacional(admin.ModelAdmin):
+class JogadorTurmaFasePensamentoComputacionalAdmin(admin.ModelAdmin):
   list_display = ('jogador',
                   'fase',)
 
@@ -30,5 +30,5 @@ class JogadorTurmaFasePensamentoComputacional(admin.ModelAdmin):
 admin.site.register(Jogador, JogadorAdmin)
 admin.site.register(FaseLogicaProgramacao, FaseLogicaProgramacaoAdmin)
 admin.site.register(JogadorTurmaFaseLogicaProgramacao, JogadorTurmaFaseLogicaProgramacaoAdmin)
-admin.site.register(FasePensamentoComputacional, FasePensamentoComputacional)
-admin.site.register(JogadorTurmaFasePensamentoComputacional, JogadorTurmaFasePensamentoComputacional)
+# admin.site.register(FasePensamentoComputacional, JogadorTurmaFasePensamentoComputacionalAdmin)
+# admin.site.register(JogadorTurmaFasePensamentoComputacional, FasePensamentoComputacionalAdmin)
