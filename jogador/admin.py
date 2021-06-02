@@ -30,5 +30,5 @@ class JogadorTurmaFasePensamentoComputacionalAdmin(admin.ModelAdmin):
 admin.site.register(Jogador, JogadorAdmin)
 admin.site.register(FaseLogicaProgramacao, FaseLogicaProgramacaoAdmin)
 admin.site.register(JogadorTurmaFaseLogicaProgramacao, JogadorTurmaFaseLogicaProgramacaoAdmin)
-# admin.site.register(FasePensamentoComputacional, JogadorTurmaFasePensamentoComputacionalAdmin)
-# admin.site.register(JogadorTurmaFasePensamentoComputacional, FasePensamentoComputacionalAdmin)
+admin.site.register(FasePensamentoComputacional, FasePensamentoComputacionalAdmin)
+admin.site.register(JogadorTurmaFasePensamentoComputacional, JogadorTurmaFasePensamentoComputacionalAdmin)
