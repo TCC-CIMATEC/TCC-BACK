@@ -30,6 +30,7 @@ def dev():
     # drop_db()
     migrations()  # importante rodar nesta ordem, dados de producao
     fix("superuser")
+    fix("questions")
 
 
 def backup_db():
