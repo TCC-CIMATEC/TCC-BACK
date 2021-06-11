@@ -1,4 +1,6 @@
 from rest_framework import serializers
+from rest_framework.response import Response
+from rest_framework import status
 from .models import Turma
 from django.contrib.auth import get_user_model
 
@@ -17,6 +19,13 @@ class TurmaPOSTSerializer(serializers.ModelSerializer):
         fields = ('id', 'nome', 'turno', 'professor', 'codigoTurma', 'alunos', )
 
     def create(self, validated_data):
+        professor = User.objects.filter(email=validated_data['professor']).first()
+        if not User:
+            return Response({"Turma": ["Professor não encontrado"]}, status=status.
+                            HTTP_400_BAD_REQUEST)
+        validated_data['professor'] = professor.pk
+        print(validated_data['professor'])
+
         turma = Turma.objects.create()
         turma.nome = validated_data['nome']
         turma.turno = validated_data['turno']
