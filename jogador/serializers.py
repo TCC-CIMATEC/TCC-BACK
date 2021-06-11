@@ -38,12 +38,11 @@ class JogadorPOSTSerializer(serializers.ModelSerializer):
             if len(nome_completo) > 1:
                 user.last_name = nome_completo[1]
             user.save()
-        else:
-            if validated_data['categoria'] == "P":
-                return user
-            jogador = Jogador.objects.create(
-                user=user,
-                pontuacao=0, 
-                nivel=0
-            )
+        if validated_data['categoria'] == "P":
+            return user
+        Jogador.objects.create(
+            user=user,
+            pontuacao=0, 
+            nivel=0
+        )
         return user
