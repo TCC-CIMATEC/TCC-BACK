@@ -7,6 +7,7 @@ from rest_framework_simplejwt.tokens import AccessToken
 from .serializers import JogadorSerializer, JogadorPOSTSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from django.shortcuts import get_object_or_404
 
 class RankingView(ListCreateAPIView, CreateAPIView):
     queryset = Jogador.objects.all().order_by('-pontuacao', 'created_at')[:5]
@@ -17,6 +18,17 @@ class JogadorView(ListCreateAPIView, CreateAPIView):
     queryset = Jogador.objects.all()
     serializer_class = JogadorSerializer
     filter_backends = [DjangoFilterBackend]
+
+class OneUserView(RetrieveUpdateAPIView, RetrieveUpdateDestroyAPIView):
+    permission_classes = (permissions.AllowAny, )
+    serializer_class = JogadorSerializer
+    lookup_field = 'id'
+
+    def get_object(self):
+        id = self.kwargs.get("id")
+        user = User.objects.filter(id=id).first()
+        return get_object_or_404(Jogador, user=user)
+
 
 class JogadorRegistrationView(APIView):
     permission_classes = (permissions.AllowAny,)

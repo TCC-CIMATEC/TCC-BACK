@@ -55,4 +55,4 @@ class TurmaUpdateView(RetrieveUpdateAPIView, RetrieveUpdateDestroyAPIView):
                 return Response({"message":"Aluno inserido na turma com sucesso!"}, status=status.HTTP_200_OK)
         
         else:
-            return Response({"error": "O parametro id é obrigatório"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "O parametro id é obrigatório"}, status=status.HTTP_400_BAD_REQUEST)z
