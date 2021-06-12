@@ -7,7 +7,7 @@ class OpcaoAdmin(admin.ModelAdmin):
 
 class QuestaoAdmin(admin.ModelAdmin):
   list_display = ('titulo',
-                  'descricao',
+                  'url_img',
                   'opcao1',
                   'opcao2',
                   'opcao3',

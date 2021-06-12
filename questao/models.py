@@ -15,8 +15,8 @@ class Questao(BaseMixin):
     verbose_name="Questao"
     verbose_name_plural="Questoes"
 
-  titulo = models.CharField(max_length=150, verbose_name='Título da questão', null=True, blank=True)
-  descricao = models.CharField(max_length=150, verbose_name='Descrição da questão', null=True, blank=True)
+  titulo = models.CharField(max_length=150, verbose_name='Título da questão')
+  url_img = models.CharField(max_length=150, verbose_name='Descrição da questão')
   opcao1 = models.ForeignKey(Opcao, verbose_name='Opção 1', related_name='Opcao1', on_delete=models.CASCADE, blank=True, null=True)
   opcao2 = models.ForeignKey(Opcao, verbose_name='Opção 2', related_name='Opcao2', on_delete=models.CASCADE, blank=True, null=True)
   opcao3 = models.ForeignKey(Opcao, verbose_name='Opção 3', related_name='Opcao3', on_delete=models.CASCADE, blank=True, null=True)
