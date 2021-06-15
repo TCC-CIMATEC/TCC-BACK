@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'authenticate',
     'jogador',
+    'conteudo',
     'questao',
     'turma',
 ]
