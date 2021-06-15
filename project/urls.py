@@ -21,5 +21,6 @@ urlpatterns = [
     path('api/authenticate/', include('authenticate.urls')),
     path('api/jogador/', include('jogador.urls')),
     path('api/questao/', include('questao.urls')),
+    path('api/conteudo/', include('conteudo.urls')),
     path('api/turma/', include('turma.urls')),
 ]
