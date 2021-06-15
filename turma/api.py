@@ -1,14 +1,20 @@
 from jogador.models import Jogador
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.views import APIView
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Turma, User
 from rest_framework.response import Response
 from rest_framework import status, permissions
-from .serializers import TurmaSerializer, TurmaPOSTSerializer
+from .serializers import TurmaSerializer
 
 class TurmaView(ListCreateAPIView):
     queryset = Turma.objects.all()
     serializer_class = TurmaSerializer
+    filter_backends = [DjangoFilterBackend]
+    filter_fields = ('id',
+                    'professor__id',
+                    'alunos__user__id')
+
 
 class TurmaRegistrationView(APIView):
     permission_classes = (permissions.AllowAny,)
