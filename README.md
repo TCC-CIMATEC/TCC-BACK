@@ -128,7 +128,7 @@ virtualenv -p python3  vm
 ```
 
 ```bash
-cd project && pip install -r requirements.txt
+cd TCC-BACK && pip install -r requirements.txt
 ```
 
 ### Rodando o projeto
