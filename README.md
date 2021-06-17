@@ -131,7 +131,7 @@ virtualenv -p python3  vm
 cd project && pip install -r requirements.txt
 ```
 
-###Rodando o projeto
+### Rodando o projeto
 ```bash
 fab dev
 ```
