@@ -115,7 +115,33 @@
 
 ## Instalação Back-end
 
-COLOCAR PASSO A PASSO INSTALAÇÃO
+
+## Utilizando virtual enviroment:
+
+### Dependências
+1) Python 3
+2) Virtual env
+
+### Use os comandos dentro da pasta do projeto:
+```bash
+virtualenv -p python3  vm
+```
+
+```bash
+cd project && pip install -r requirements.txt
+```
+
+###Rodando o projeto
+```bash
+fab dev
+```
+
+```bash
+python manage.py runserver
+```
+
+> NOTA: Necessário estar na Virtual env
+
 
 ## Equipe
 
