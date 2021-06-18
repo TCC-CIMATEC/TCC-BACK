@@ -44,7 +44,7 @@ class JogadorPOSTSerializer(serializers.ModelSerializer):
             user=user,
             pontuacao=0, 
             nivel=0,
-            faselogicaprogramacao=0,
-            fasepensamentocomputacional=0
+            faselogicaprogramacao=1,
+            fasepensamentocomputacional=1
         )
         return user

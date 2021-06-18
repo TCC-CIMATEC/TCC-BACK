@@ -15,5 +15,5 @@ class Jogador(BaseMixin):
   user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='Usuário')
   pontuacao = models.IntegerField(verbose_name='Pontuação do jogador', blank=True, default=0)
   nivel = models.IntegerField(verbose_name='Nível do jogador', blank=True, null=True, default=0)
-  fasepensamentocomputacional = models.IntegerField(verbose_name='Fase lógica de programação', blank=True, null=True, default=0)
-  faselogicaprogramacao = models.IntegerField(verbose_name='Fase lógica de programação', blank=True, null=True, default=0)
+  fasepensamentocomputacional = models.IntegerField(verbose_name='Fase lógica de programação', blank=True, null=True, default=1)
+  faselogicaprogramacao = models.IntegerField(verbose_name='Fase lógica de programação', blank=True, null=True, default=1)
