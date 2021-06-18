@@ -68,6 +68,12 @@ class JogadorUpdateView(RetrieveUpdateAPIView, RetrieveUpdateDestroyAPIView):
                 if 'nivel' in data and (not data['nivel'] == '' or not data['nivel'] == None):
                     instance.nivel = data['nivel']
 
+                if 'fasepensamentocomputacional' in data and (not data['fasepensamentocomputacional'] == '' or not data['fasepensamentocomputacional'] == None):
+                    instance.fasepensamentocomputacional = data['fasepensamentocomputacional']
+
+                if 'faselogicaprogramacao' in data and (not data['faselogicaprogramacao'] == '' or not data['faselogicaprogramacao'] == None):
+                    instance.faselogicaprogramacao = data['faselogicaprogramacao']
+
                 instance.save()
                 return Response({"message":"Os dados foram atualizados com sucesso!"}, status=status.HTTP_200_OK)
         

@@ -7,4 +7,4 @@ class ConteudoView(ListCreateAPIView):
     queryset = Conteudo.objects.all()
     serializer_class = ConteudoSerializer
     filter_backends = [DjangoFilterBackend]
-    filter_fields = ('id',)
+    filter_fields = ('id', 'modulo')

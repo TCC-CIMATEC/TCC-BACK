@@ -8,7 +8,7 @@ User = get_user_model()
 class JogadorSerializer(serializers.ModelSerializer):
   class Meta:
     model = Jogador
-    fields = ('user', 'pontuacao', 'nivel', )
+    fields = ('user', 'pontuacao', 'nivel', 'faselogicaprogramacao', 'fasepensamentocomputacional', )
     allow_null = True
     depth = 2
 
@@ -43,6 +43,8 @@ class JogadorPOSTSerializer(serializers.ModelSerializer):
         Jogador.objects.create(
             user=user,
             pontuacao=0, 
-            nivel=0
+            nivel=0,
+            faselogicaprogramacao=0,
+            fasepensamentocomputacional=0
         )
         return user
